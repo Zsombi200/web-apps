@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   margin: 0;
   padding: 0;
@@ -75,82 +74,4 @@ body {
 }
 .link:hover {
   color: rgb(68, 68, 255);
-=======
-body {
-  margin: 0;
-  padding: 0;
-}
-.topBar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  background-color: rgb(111, 146, 243);
-  margin: 0;
-}
-#logo {
-  margin-left: 20px;
-  font-size: 30px;
-  width: 155px;
-}
-.topBar #fgh {
-  width: 155px;
-  margin-right: 20px;
-}
-.asd {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.asd div {
-  width: 150px;
-  text-align: center;
-}
-.asd div p {
-  border: 1px solid black;
-  border-radius: 20px;
-  height: 20px;
-  padding: 10px;
-  font-size: 20px;
-}
-#front {
-  margin: 0;
-  text-align: center;
-  height: 100vh;
-  background-color: whitesmoke;
-  border: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-#front h1 {
-  margin: 0;
-  font-size: 5em;
-}
-#front p {
-  margin: 0;
-  font-size: 1.5em;
-}
-.foot {
-  margin: 0;
-  background-color: grey;
-  border: 1px solid transparent;
-  text-align: center;
-}
-.author {
-  font-size: 1.2em;
-}
-.link {
-  color: blue;
-}
-.link:visited {
-  color: rgb(190, 190, 255);
-}
-.link:hover {
-  color: rgb(68, 68, 255);
->>>>>>> 52c7772e83ff8e6b6a46ba091e5a741e4ed0d771
 }
