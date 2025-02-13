@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 .topBar {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   display: flex;
@@ -62,4 +62,16 @@ body {
   background-color: grey;
   border: 1px solid transparent;
   text-align: center;
+}
+.author {
+  font-size: 1.2em;
+}
+.link {
+  color: blue;
+}
+.link:visited {
+  color: rgb(190, 190, 255);
+}
+.link:hover {
+  color: rgb(68, 68, 255);
 }
