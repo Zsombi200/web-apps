@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="piano">
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="c"
+      >
+        <p>C</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="small"
+        id="cTop"
+      >
+        <p>cTop</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="d"
+      >
+        <p>D</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="small"
+        id="dTop"
+      >
+        <p>dTop</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="e"
+      >
+        <p>E</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="f"
+      >
+        <p>F</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="small"
+        id="fTop"
+      >
+        <p>fTop</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="g"
+      >
+        <p>G</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="small"
+        id="gTop"
+      >
+        <p>gTop</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="a"
+      >
+        <p>A</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="small"
+        id="aTop"
+      >
+        <p>aTop</p>
+      </div>
+      <div
+        onmouseup="soundRelease(this)"
+        onmousedown="sound(this)"
+        class="big"
+        id="b"
+      >
+        <p>B</p>
+      </div>
+    </div>
+  </body>
+  <audio src="sounds/piano-c_C_major.wav" id="cSound"></audio>
+  <audio src="sounds/piano-c_CTop_major.wav" id="cTopSound"></audio>
+  <audio src="sounds/piano-d_D_major.wav" id="dSound"></audio>
+  <audio
+    src="sounds/piano-single-note-d-major_60bpm_G_major.wav"
+    id="dTopSound"
+  ></audio>
+  <audio src="sounds/piano-e_E_major.wav" id="eSound"></audio>
+  <audio src="sounds/piano-f_F_major.wav" id="fSound"></audio>
+  <audio src="sounds/piano-f_FTop_major.wav" id="fTopSound"></audio>
+  <audio src="sounds/piano-g_G_major.wav" id="gSound"></audio>
+  <audio src="sounds/piano-g_GTop_major.wav" id="gTopSound"></audio>
+  <audio src="sounds/piano-a_A_major.wav" id="aSound"></audio>
+  <audio src="sounds/piano-note-a_1bpm_A.wav" id="aTopSound"></audio>
+  <audio src="sounds/piano-b_B_major.wav" id="bSound"></audio>
+
+  <script src="script.js"></script>
+</html>
