@@ -9,7 +9,7 @@ const wrongLetters = document.getElementById("wrongLetter");
 
 let letterCharachter = [];
 let wrongCharachters = [];
-let winCheck = false;
+let count = 0
 
 function asd() {
   let guess = document.getElementById("input").value.toLowerCase();
@@ -20,11 +20,9 @@ function asd() {
   } else if (!/^[A-Za-z]+$/.test(guess)) {
     error.innerHTML = "Word can only contain letters";
     return;
-  } else if (guess === word) {
-    error.innerHTML = "You win";
-    winCheck = true
   } else {
-    error.innerHTML = "Good guess"
+    error.innerHTML = "Good guess";
+    count += 1;
   }
 
   guess.split("").map((ele, index) => {
@@ -40,14 +38,35 @@ function asd() {
     if (word.indexOf(ele) !== -1 && letterCharachter.indexOf(ele) === -1) {
       letters.innerHTML += ` ${ele}`;
       letterCharachter.push(ele);
-    } else if (word.indexOf(ele) === -1 && wrongCharachters.indexOf(ele) === -1) {
-      wrongLetters.innerHTML += ` ${ele}`
-      wrongCharachters.push(ele)
+    } else if (
+      word.indexOf(ele) === -1 &&
+      wrongCharachters.indexOf(ele) === -1
+    ) {
+      wrongLetters.innerHTML += ` ${ele}`;
+      wrongCharachters.push(ele);
     }
   });
+  if (word === guess) {
+    clearContent("body");
+  }
 }
 
 submit.onclick = asd;
-if (winCheck) {
-  
+
+function clearContent(elementID) {
+  const element = document.querySelector(elementID);
+  element.innerHTML = "";
+  element.style.backgroundColor = "lightgreen";
+
+  const won = document.createElement('h1');
+  won.innerHTML = "You won"
+  element.appendChild(won)
+
+  const countDisplay = document.createElement("p")
+  countDisplay.innerHTML = `Number of guesses: ${count}`
+  element.appendChild(countDisplay)
+
+  const wordWas = document.createElement("p")
+  wordWas.innerHTML = `Word was: ${word}`
+  element.appendChild(wordWas)
 }
