@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.topBar {
+#topBar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -18,7 +18,7 @@ body {
   font-size: 30px;
   width: 155px;
 }
-.topBar #fgh {
+#topBar #fgh {
   width: 155px;
   margin-right: 20px;
 }
@@ -74,4 +74,41 @@ body {
 }
 .link:hover {
   color: rgb(68, 68, 255);
+}
+
+#asd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 40vh;
+  text-align: center;
+  background-color: rgb(111, 146, 243);
+  z-index: 2;
+  label {
+    font-size: 2em;
+  }
+}
+#description {
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+  font-size: 1.7em;
+}
+#amount {
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  font-size: 1.7em;
+}
+#window {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
 }
