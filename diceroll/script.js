@@ -13,6 +13,14 @@ const diceSides = [
 ];
 
 btn.addEventListener("click", () => {
+  dice.classList.toggle("roll-animation");
+  setTimeout(() => {
+    dice.classList.toggle("roll-animation");
+    addElement();
+  }, 1500);
+});
+
+const addElement = () => {
   count++;
   const side = diceSides[Math.floor(Math.random() * 6)];
   dice.innerHTML = side;
@@ -31,16 +39,16 @@ btn.addEventListener("click", () => {
 
   previousRolls.style.width = "500px";
 
-  rollNumber.style.margin = "0"
+  rollNumber.style.margin = "0";
 
   element.style.backgroundColor = "rgb(177, 177, 177)";
   element.style.borderRadius = "10px";
   element.style.display = "flex";
-  element.style.justifyContent = "space-between"
-  element.style.alignItems = "center"
-  element.style.padding = "10px"
-  element.style.marginTop = "10px"
+  element.style.justifyContent = "space-between";
+  element.style.alignItems = "center";
+  element.style.padding = "10px";
+  element.style.marginTop = "10px";
 
-  element.querySelector("p").style.fontSize = "3em"
-  element.querySelector("p").style.margin = "0"
-});
+  element.querySelector("p").style.fontSize = "3em";
+  element.querySelector("p").style.margin = "0";
+};
