@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+}
+h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+#dice {
+  font-size: 10em;
+}
+#roll {
+  background-color: #79a8cf;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  width: 200px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+#roll:hover {
+    background-color: #5b7a94;
+}
+#previousRolls {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+}
