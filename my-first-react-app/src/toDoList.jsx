@@ -31,7 +31,16 @@ function ToDoList() {
     }
   }
 
-  function moveTaskDown(index) {}
+  function moveTaskDown(index) {
+    if (index < tasks.length - 1) {
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index + 1]] = [
+        updatedTasks[index + 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  }
 
   return (
     <>
@@ -42,9 +51,11 @@ function ToDoList() {
           placeholder="Write task here"
           value={newTask}
           onChange={handleInputChange}
+          id="todo-input"
+          className="button"
         />
         <button
-          className="add-button"
+          className="add-button button"
           onClick={addTask}>
           Add
         </button>
@@ -54,25 +65,27 @@ function ToDoList() {
         <ol>
           {tasks.map((task, index) => (
             <li key={index}>
-              <span>{task}</span>
+              <div className="list-item">
+                <span>{task}</span>
 
-              <button
-                className="delete-button"
-                onClick={() => deleteTask(index)}>
-                Delete
-              </button>
+                <button
+                  className="delete-button"
+                  onClick={() => deleteTask(index)}>
+                  Delete
+                </button>
 
-              <button
-                className="move-up-button"
-                onClick={() => moveTaskUp(index)}>
-                Up
-              </button>
+                <button
+                  className="move-button"
+                  onClick={() => moveTaskUp(index)}>
+                  Up
+                </button>
 
-              <button
-                className="move-down-button"
-                onClick={() => moveTaskDown(index)}>
-                Down
-              </button>
+                <button
+                  className="move-button"
+                  onClick={() => moveTaskDown(index)}>
+                  Down
+                </button>
+              </div>
             </li>
           ))}
         </ol>
