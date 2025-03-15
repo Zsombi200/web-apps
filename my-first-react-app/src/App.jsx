@@ -1,15 +1,8 @@
-import Header from "./Header.jsx";
-import Card from "./Card.jsx";
-import AddCard from "./AddCard.jsx";
+import ToDoList from "./toDoList";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Card content="sad"/>
-      <br />
-      <AddCard />
-    </>
+    <ToDoList/>
   );
 }
 
