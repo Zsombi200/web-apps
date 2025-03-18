@@ -29,7 +29,7 @@ function Game() {
   }
 
   function placeMark(i) {
-    if (!winner) {
+    if (!winner && square[i] === "") {
       let updatedSquare = square;
       updatedSquare[i] = mark;
 
@@ -38,8 +38,10 @@ function Game() {
     }
   }
 
-  resetBoard() {
-    
+  function resetBoard() {
+    setSquare(["", "", "", "", "", "", "", "", ""]);
+    setMark("X");
+    setWinner(false);
   }
 
   return (
@@ -57,16 +59,16 @@ function Game() {
             <p>{element}</p>
           </div>
         ))}
-        <div className="turn">
-          {winner ? "Winner is " + winner : "It's " + mark + "-s turn"}
-        </div>
-        <div>
-          <button
-            id="reset"
-            onClick={() => resetBoard()}>
-            Reset
-          </button>
-        </div>
+      </div>
+      <div className="turn">
+        {winner ? "Winner is " + winner : "It's " + mark + "-s turn"}
+      </div>
+      <div>
+        <button
+          id="reset"
+          onClick={() => resetBoard()}>
+          Reset
+        </button>
       </div>
     </>
   );

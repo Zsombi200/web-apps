@@ -1,3 +1,7 @@
+#root {
+  text-align: center;
+}
+
 #game-table {
   display: grid;
   grid-template-rows: 50px 50px 50px;
@@ -16,4 +20,25 @@
     margin: auto 0 auto 0;
     border: none;
   }
+}
+
+#game-table :nth-child(1),
+#game-table :nth-child(2),
+#game-table :nth-child(3) {
+  border-top: 0;
+}
+#game-table :nth-child(7),
+#game-table :nth-child(8),
+#game-table :nth-child(9) {
+  border-bottom: 0;
+}
+#game-table :nth-child(1),
+#game-table :nth-child(4),
+#game-table :nth-child(7) {
+  border-left: 0;
+}
+#game-table :nth-child(3),
+#game-table :nth-child(6),
+#game-table :nth-child(9) {
+  border-right: 0;
 }
