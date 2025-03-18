@@ -6,15 +6,40 @@ function Game() {
   const [winner, setWinner] = useState(false);
 
   function winCheck() {
-    return "asd"
+    const possibleWins = [
+      [0, 1, 2], // row
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 4, 8], // diagonal
+      [2, 4, 6],
+      [0, 3, 6], // column
+      [1, 4, 7],
+      [2, 5, 8],
+    ];
+
+    possibleWins.forEach((element) => {
+      if (
+        square[element[0]] &&
+        square[element[0]] === square[element[1]] &&
+        square[element[1]] === square[element[2]]
+      ) {
+        setWinner(square[element[0]]);
+      }
+    });
   }
 
   function placeMark(i) {
-    let updatedSquare = square;
-    updatedSquare[i] = mark;
+    if (!winner) {
+      let updatedSquare = square;
+      updatedSquare[i] = mark;
 
-    setSquare(updatedSquare);
-    mark === "X" ? setMark("O") : setMark("X");
+      setSquare(updatedSquare);
+      mark === "X" ? setMark("O") : setMark("X");
+    }
+  }
+
+  resetBoard() {
+    
   }
 
   return (
@@ -27,16 +52,22 @@ function Game() {
             id={index}
             onClick={() => {
               placeMark(index);
+              winCheck();
             }}>
             <p>{element}</p>
           </div>
         ))}
+        <div className="turn">
+          {winner ? "Winner is " + winner : "It's " + mark + "-s turn"}
+        </div>
+        <div>
+          <button
+            id="reset"
+            onClick={() => resetBoard()}>
+            Reset
+          </button>
+        </div>
       </div>
-      {winCheck ? (
-        <div id="turn">Winner is {winCheck}</div>
-      ) : (
-        <div id="turn">It's {mark}-s turn</div>
-      )}
     </>
   );
 }
