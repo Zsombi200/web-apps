@@ -21,7 +21,7 @@ function ToDoList() {
     setTasks(updatedTasks);
   }
 
-  function moveTaskUp(index) {
+  function moveTaskUp(index) {        
     if (index > 0) {
       const updatedTasks = [...tasks];
       [updatedTasks[index], updatedTasks[index - 1]] = [

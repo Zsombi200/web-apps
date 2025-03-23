@@ -3,26 +3,18 @@ import { useEffect, useRef, useState } from "react";
 function SearchBar() {
   const [text, setText] = useState("");
   const [foundWords, setFoundWords] = useState([]);
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     const searchHistory = ["word", "search", "waste"];
-    const searchHistoryString = searchHistory.join(",");
-    setFoundWords([]);
+    let goodWords = [];
 
     searchHistory.map((element) => {
-      const foundIndex = searchHistoryString.indexOf(text);
-      foundIndex === -1
-        ? console.log("didnt find")
-        : setFoundWords(
-            setFoundWords(
-              foundWords +
-                searchHistoryString[
-                  (foundIndex, searchHistoryString.indexOf(","))
-                ]
-            )
-          );
+      element.indexOf(text) === -1 ? null : goodWords.push(element);
     });
+    setFoundWords(goodWords);
     console.log(foundWords);
+    console.log(goodWords);
   }, [text]);
 
   return (
@@ -32,8 +24,17 @@ function SearchBar() {
         onChange={(e) => {
           setText(e.target.value);
         }}
+        onFocus={setShow(!show)}
+        onBlur={setShow(!show)}
       />
       <button>Search</button>
+      <ul className={`dropdown ${show? "show" : "hide"}`}>
+        {foundWords.length === 5
+          ? foundWords.map((element, index) => {
+              <li key={index}>{element}</li>;
+            })
+          : null}
+      </ul>
     </>
   );
 }
