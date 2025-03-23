@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import "./search.css";
 
 function SearchBar() {
   const [text, setText] = useState("");
   const [foundWords, setFoundWords] = useState([]);
-  const [show, setShow] = useState(false)
+  const [focus, setFocus] = useState(false);
 
   useEffect(() => {
     const searchHistory = ["word", "search", "waste"];
@@ -24,16 +25,14 @@ function SearchBar() {
         onChange={(e) => {
           setText(e.target.value);
         }}
-        onFocus={setShow(!show)}
-        onBlur={setShow(!show)}
+        onFocus={() => setFocus(!focus)}
+        onBlur={() => setFocus(!focus)}
       />
       <button>Search</button>
-      <ul className={`dropdown ${show? "show" : "hide"}`}>
-        {foundWords.length === 5
-          ? foundWords.map((element, index) => {
-              <li key={index}>{element}</li>;
-            })
-          : null}
+      <ul className={`dropdown ${focus ? "show" : "hide"}`}>
+        {foundWords.length >= 1
+          ? foundWords.map((element, index) => <li key={index} className="dropdown-content">{element}</li>)
+          : <li className="dropdown-content">Nothing matches</li>}
       </ul>
     </>
   );

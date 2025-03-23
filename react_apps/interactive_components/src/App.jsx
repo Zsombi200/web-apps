@@ -11,8 +11,12 @@ function App() {
 
   return (
     <>
-      <SearchBar />
-      <Carousel URLS={pictures} />
+      <div>
+        <SearchBar />
+      </div>
+      <div>
+        <Carousel URLS={pictures} />
+      </div>
     </>
   );
 }

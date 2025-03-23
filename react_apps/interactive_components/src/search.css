@@ -1,0 +1,21 @@
+.dropdown{
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(192, 192, 192);
+  width: 177px;
+  border-radius: 10px;
+  padding-left: 0;
+}
+.dropdown-content {
+  list-style-type: none;
+  margin: 2px;
+  border-bottom: 1px solid black;
+  padding-left: 20px;
+}
+.dropdown-content:last-child{
+  border: none;
+}
+.hide {
+  display: none;
+}
