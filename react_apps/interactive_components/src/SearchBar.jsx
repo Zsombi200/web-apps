@@ -7,15 +7,17 @@ function SearchBar() {
   const [focus, setFocus] = useState(false);
 
   useEffect(() => {
-    const searchHistory = ["word", "search", "waste"];
+    const searchHistory = [
+      "word", "search", "waste", "apple", "banana", "cherry", "date", "elderberry",
+      "fig", "grape", "honeydew", "kiwi", "lemon", "mango", "nectarine", "orange",
+      "papaya", "quince", "raspberry", "strawberry"
+    ];
     let goodWords = [];
 
     searchHistory.map((element) => {
       element.indexOf(text) === -1 ? null : goodWords.push(element);
     });
     setFoundWords(goodWords);
-    console.log(foundWords);
-    console.log(goodWords);
   }, [text]);
 
   return (
@@ -31,8 +33,8 @@ function SearchBar() {
       <button>Search</button>
       <ul className={`dropdown ${focus ? "show" : "hide"}`}>
         {foundWords.length >= 1
-          ? foundWords.map((element, index) => <li key={index} className="dropdown-content">{element}</li>)
-          : <li className="dropdown-content">Nothing matches</li>}
+          ? foundWords.map((element, index) => index <= 5 ? <li key={index} className="dropdown-content">{element}</li> : null)
+          : <li className="dropdown-content">No matches found</li>}
       </ul>
     </>
   );
