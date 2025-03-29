@@ -17,7 +17,16 @@ function Calculator() {
           screenElement.value = screenElement.value.slice(0, -1);
           break;
         case "equal":
-          screenElement.value = eval(screenElement.value);
+          try {
+            const result = eval(screenElement.value);
+            if (result === undefined || result === null || isNaN(result)) {
+              throw new Error("Invalid calculation");
+            }
+            screenElement.value = result; // Display the result
+          } catch (error) {
+            screenElement.value = "Error"; // Display "Error" for invalid expressions
+            console.error("Calculation error:", error.message); // Log the error for debugging
+          }
           break;
         default:
           screenElement.value += charachter;
@@ -53,13 +62,12 @@ function Calculator() {
         <button value={1}>1</button>
         <button value={2}>2</button>
         <button value={3}>3</button>
-
         <button
           id="zero"
           value={0}>
           0
         </button>
-        <button value=",">,</button>
+        <button value=".">,</button>
         <button
           id="equal"
           value="equal">
