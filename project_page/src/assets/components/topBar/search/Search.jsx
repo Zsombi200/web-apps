@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import "./search.css";
+import { useState, useEffect } from "react";
 
-function SearchBar() {
+function Search() {
   const [text, setText] = useState("");
   const [foundWords, setFoundWords] = useState([]);
   const [focus, setFocus] = useState(false);
@@ -38,7 +38,7 @@ function SearchBar() {
   }, [text]);
 
   return (
-    <>
+    <div className="search">
       <input
         type="text"
         onChange={(e) => {
@@ -63,8 +63,8 @@ function SearchBar() {
           <li className="dropdown-content">No matches found</li>
         )}
       </ul>
-    </>
+    </div>
   );
 }
 
-export default SearchBar;
+export default Search;
