@@ -1,10 +1,11 @@
 import './maker.css'
+import { Link } from "react-router-dom";
 
 function Maker() {
   return (
-    <div className="maker">
+    <div to="/asd" className="maker">
       <img
-        src="/public/github.png"
+        src="/github.png"
         alt="Picture of the creator"
       />
       <p>
